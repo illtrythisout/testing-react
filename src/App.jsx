@@ -1,24 +1,22 @@
-import { useEffect, useState } from 'react'
-import './App.css'
+import './App.css';
 
-function App() {
+import { useState } from 'react';
 
-  const [counter, setCounter] = useState(0);
+const App = () => {
+  const [heading, setHeading] = useState('Magnificent Monkeys');
 
-  useEffect(() => {
-    const key = setInterval(() => {
-      setCounter(count => count + 1)
-    }, 1000)
+  const clickHandler = () => {
+    setHeading('Radical Rhinos');
+  };
 
-    return () => clearInterval(key)
-
-  }, [])
-  
   return (
     <>
-      <p>{counter} seconds passed</p>
+      <button type="button" onClick={clickHandler}>
+        Click Me
+      </button>
+      <h1>{heading}</h1>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

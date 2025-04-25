@@ -1,20 +1,18 @@
 import './App.css';
-
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const App = () => {
-  const [heading, setHeading] = useState('Magnificent Monkeys');
-
-  const clickHandler = () => {
-    setHeading('Radical Rhinos');
-  };
-
   return (
     <>
-      <button type="button" onClick={clickHandler}>
-        Click Me
-      </button>
-      <h1>{heading}</h1>
+      <h1>Hi from the home page</h1>
+      <p>Some links to other pages</p>
+      <nav>
+        <ul>
+          <li>
+            <Link to="profile">Profile Page</Link>
+          </li>
+        </ul>
+      </nav>
     </>
   );
 };
